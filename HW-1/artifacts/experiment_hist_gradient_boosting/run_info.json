@@ -1,0 +1,14 @@
+{
+  "input_sha256": {
+    "train.csv": "781508734326c800c35e7b1097d2604ae825df235740f8d216c22c26efc2c845",
+    "val.csv": "42f4d8b3ef61cf00f7e8727fa6bc522ebd4c40b37de7f1ee9936a3cca9fb6d7f"
+  },
+  "python_dependencies": {
+    "PyYAML": "6.0.3",
+    "joblib": "1.5.3",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.0"
+  }
+}

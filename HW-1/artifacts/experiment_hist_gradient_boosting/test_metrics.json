@@ -1,0 +1,24 @@
+{
+  "accuracy": 0.871875,
+  "confusion_matrix": [
+    [
+      11705,
+      730
+    ],
+    [
+      1356,
+      2490
+    ]
+  ],
+  "experiment_name": "experiment_hist_gradient_boosting",
+  "f1": 0.704783,
+  "log_loss": 0.279811,
+  "model_name": "hist_gradient_boosting",
+  "n_rows": 16281,
+  "positive_rate": 0.236226,
+  "precision": 0.773292,
+  "recall": 0.647426,
+  "roc_auc": 0.925723,
+  "split": "official_test",
+  "test_sha256": "e4a952e47649bf8dffaee6d6250d7f99d70a987a4533681ef191794208805ae1"
+}

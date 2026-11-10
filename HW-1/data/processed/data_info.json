@@ -1,0 +1,26 @@
+{
+  "counts": {
+    "test": 16281,
+    "train": 26048,
+    "val": 6513
+  },
+  "dataset_license": "CC BY 4.0",
+  "positive_rates": {
+    "test": 0.236226,
+    "train": 0.240825,
+    "val": 0.240749
+  },
+  "raw_sha256": {
+    "adult.data": "5b00264637dbfec36bdeaab5676b0b309ff9eb788d63554ca0a249491c86603d",
+    "adult.test": "a2a9044bc167a35b2361efbabec64e89d69ce82d9790d2980119aac5fd7e9c05"
+  },
+  "seed": 42,
+  "source": "UCI Adult, https://doi.org/10.24432/C5XW20",
+  "split_sha256": {
+    "test": "e4a952e47649bf8dffaee6d6250d7f99d70a987a4533681ef191794208805ae1",
+    "train": "781508734326c800c35e7b1097d2604ae825df235740f8d216c22c26efc2c845",
+    "val": "42f4d8b3ef61cf00f7e8727fa6bc522ebd4c40b37de7f1ee9936a3cca9fb6d7f"
+  },
+  "split_strategy": "stratified train/validation; untouched official UCI test",
+  "validation_fraction_of_original_training": 0.2
+}
