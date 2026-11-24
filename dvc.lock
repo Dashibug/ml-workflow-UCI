@@ -44,10 +44,10 @@ stages:
     params:
       HW-2/configs/data.yaml:
         seed: 42
-        val_size: 0.2
+        val_size: 0.25
     outs:
     - path: HW-2/data/processed
       hash: md5
-      md5: 96b6e2b1fbca2459299da9ee981fcd59.dir
-      size: 5088573
+      md5: c4ad588fa553e829c50a42eaaf9f0a2b.dir
+      size: 5088574
       nfiles: 4
