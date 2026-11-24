@@ -1,4 +1,4 @@
-# Отчёт по HW-2 — Версионирование данных с DVC
+# Отчёт по HW-2 - Версионирование данных с DVC
 
 ## Что сделано
 
@@ -6,8 +6,8 @@
 - Определён DVC DAG: `get_data → prepare_data`.
 - Исходные файлы UCI Adult проверяются по SHA256 и отслеживаются DVC.
 - Подготовленные данные (`train.csv`, `val.csv`, `test.csv`, `data_info.json`) сохраняются как DVC output.
-- Настроен локальный remote за пределами Git-репозитория (адрес без секретов).
-- Созданы две версии с Git-тегами `data-v1` и `data-v2` (заполнить после выполнения).
+- Настроен локальный remote за пределами Git-репозитория.
+- Созданы две версии с Git-тегами `data-v1` и `data-v2`.
 
 ## Версии данных
 
@@ -54,22 +54,28 @@ dvc status
 
 ## Скриншоты (вставить 2–4 штуки)
 
-**1. DAG:** `dvc dag`.
+**1. Проверяем восстановление данных в чистом клоне:** 
+```bash
+git clone https://github.com/Dashibug/ml-workflow-UCI.git ml-workflow-UCI-dvc-check
 
-<!-- ![DVC DAG](screenshots/hw-2/01-dag.png) -->
+cd ml-workflow-UCI-dvc-check
+```
 
-**2. Remote и статус:** `dvc remote list` + `dvc status`.
+![alt text](HW-2_screenshots/init_repo.png)
 
-<!-- ![DVC remote and status](screenshots/hw-2/02-remote-status.png) -->
+
+**2. DAG:** `dvc dag` и **Remote и статус:** `dvc remote list` + `dvc status`.
+
+![alt text](HW-2_screenshots/DAG.png)
 
 **3. Восстановление data-v1:** результаты `data_info.json` и SHA256.
 
-<!-- ![Restored data-v1](screenshots/hw-2/03-data-v1.png) -->
+![alt text](HW-2_screenshots/restore_data_v1.png)
 
 **4. Восстановление data-v2 и проверка `dvc pull`.**
 
-<!-- ![Restored data-v2](screenshots/hw-2/04-data-v2.png) -->
+![alt text](HW-2_screenshots/restore_data_v2.png)
 
 ## Вывод
 
-_Добавить после реальной проверки_: DVC позволил хранить версии больших CSV вне Git, а в Git фиксировать конфигурации, зависимости, контрольные суммы и набор данных, соответствующий каждому тегу.
+Могу сказать, что DVC позволил хранить версии больших CSV вне Git, а в Git фиксировать конфигурации, зависимости, контрольные суммы и набор данных, соответствующий каждому тегу. Очень удобно.
