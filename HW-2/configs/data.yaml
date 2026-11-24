@@ -1,0 +1,4 @@
+# data-v1: val_size = 0.20
+# data-v2: val_size = 0.25, run dvc repro
+seed: 42
+val_size: 0.20

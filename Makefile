@@ -1,29 +1,20 @@
-PYTHON ?= python
+# Invoke from the root of ml-workflow-UCI
+.PHONY: hw1-test hw1-compare hw2-test hw2-repro hw2-status hw2-dag
 
-.PHONY: install install-dev data baseline experiment compare test all clean
+hw1-test:
+	cd HW-1 && python -m pytest -q
 
-install:
-	$(PYTHON) -m pip install -r requirements.txt
+hw1-compare:
+	cd HW-1 && python -m src.compare
 
-install-dev:
-	$(PYTHON) -m pip install -r requirements-dev.txt
+hw2-test:
+	cd HW-2 && python -m pytest -q
 
-data:
-	$(PYTHON) -m src.prepare_data
+hw2-repro:
+	dvc repro
 
-baseline:
-	$(PYTHON) -m src.train --config configs/baseline.yaml
+hw2-status:
+	dvc status
 
-experiment:
-	$(PYTHON) -m src.train --config configs/experiment.yaml
-
-compare:
-	$(PYTHON) -m src.compare
-
-test:
-	$(PYTHON) -m pytest -q
-
-all: data baseline experiment compare
-
-clean:
-	@echo "To remove local data and artifacts, delete data/raw/, data/processed/, artifacts/ manually."
+hw2-dag:
+	dvc dag

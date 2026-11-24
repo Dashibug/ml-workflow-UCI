@@ -1,0 +1,53 @@
+schema: '2.0'
+stages:
+  get_data:
+    cmd: cd HW-2 && python -m src.get_data
+    deps:
+    - path: HW-2/src/common.py
+      hash: md5
+      md5: 8cf4934f89cfb91f4325bbb537cfb977
+      size: 1972
+    - path: HW-2/src/get_data.py
+      hash: md5
+      md5: 011fcd7cbd1a4bbc04d8534585dde9be
+      size: 492
+    - path: HW-2/src/prepare_data.py
+      hash: md5
+      md5: 06400598d66cc3ca3a36b4b115d4add4
+      size: 5772
+    outs:
+    - path: HW-2/data/raw
+      hash: md5
+      md5: b2a5fe0c00af26cefe97f1ace151e772.dir
+      size: 5977458
+      nfiles: 2
+  prepare_data:
+    cmd: cd HW-2 && python -m src.prepare_configured
+    deps:
+    - path: HW-2/data/raw
+      hash: md5
+      md5: b2a5fe0c00af26cefe97f1ace151e772.dir
+      size: 5977458
+      nfiles: 2
+    - path: HW-2/src/common.py
+      hash: md5
+      md5: 8cf4934f89cfb91f4325bbb537cfb977
+      size: 1972
+    - path: HW-2/src/prepare_configured.py
+      hash: md5
+      md5: ec8302a50bedf6ba81ab92ce9f826d8a
+      size: 910
+    - path: HW-2/src/prepare_data.py
+      hash: md5
+      md5: 06400598d66cc3ca3a36b4b115d4add4
+      size: 5772
+    params:
+      HW-2/configs/data.yaml:
+        seed: 42
+        val_size: 0.2
+    outs:
+    - path: HW-2/data/processed
+      hash: md5
+      md5: 96b6e2b1fbca2459299da9ee981fcd59.dir
+      size: 5088573
+      nfiles: 4

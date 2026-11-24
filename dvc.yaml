@@ -1,0 +1,25 @@
+stages:
+  get_data:
+    desc: Download and verify the original UCI Adult train and test files
+    cmd: cd HW-2 && python -m src.get_data
+    deps:
+      - HW-2/src/get_data.py
+      - HW-2/src/prepare_data.py
+      - HW-2/src/common.py
+    outs:
+      - HW-2/data/raw
+
+  prepare_data:
+    desc: Reproducible train/validation split; keep official UCI test untouched
+    cmd: cd HW-2 && python -m src.prepare_configured
+    deps:
+      - HW-2/src/prepare_configured.py
+      - HW-2/src/prepare_data.py
+      - HW-2/src/common.py
+      - HW-2/data/raw
+    params:
+      - HW-2/configs/data.yaml:
+          - seed
+          - val_size
+    outs:
+      - HW-2/data/processed
