@@ -50,14 +50,14 @@ python -m src.evaluate --config configs/experiment.yaml
 ## Скриншоты работы
 
 Скриншот 1 - успешный запуск тестов (6 passed):
-![alt text](image.png)
+![alt text](HW-1_screenshots/image.png)
 
 Скриншот 2 - обучение обеих моделей и сравнение ROC-AUC:
-![alt text](image-1.png)
-![alt text](image-2.png)
+![alt text](HW-1_screenshots/image-1.png)
+![alt text](HW-1_screenshots/image-2.png)
 
 Скриншот 3 - оценка лучшей модели на официальном test:
-![alt text](image-3.png)
+![alt text](HW-1_screenshots/image-3.png)
 
 ## Вывод
 В результате получен воспроизводимый ML-workflow,то есть: данные подготавливаются командой, параметры вынесены в YAML, модели сравниваются по независимой валидации, финальный тест не используется при выборе алгоритма, а результаты сохраняются в машиночитаемом формате.
