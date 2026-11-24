@@ -40,6 +40,6 @@ dvc push
 2. `configs/data.yaml`: `val_size: 0.25`; `dvc repro`; `dvc push`; коммит; Git-тег `data-v2`.
 3. Восстановление тегов: `git switch --detach data-v1` → `dvc pull` → проверить `data_info.json`; повторить для `data-v2`. Вернуться в `main` командой `git switch main && dvc checkout`.
 
-**Важно:** хранилище `../ml-workflow-UCI-dvc-storage` находится на твоём Mac, не на GitHub. Другому человеку потребуется доступ к этому хранилищу (или повторная загрузка открытых данных через `dvc repro`). Для совместной удалённой проверки нужен доступный облачный remote.
+**Важно:** хранилище `../ml-workflow-UCI-dvc-storage` находится не на GitHub, а на локальном пк. Для совместной удалённой проверки нужен доступный облачный remote или могу выдать доступ к этому хранилищу (или повторная загрузка открытых данных через `dvc repro`).
 
 Отчёт со скриншотами: [`../reports/hw-2.md`](../reports/hw-2.md). Описание датасета: [`data/README.md`](data/README.md).
